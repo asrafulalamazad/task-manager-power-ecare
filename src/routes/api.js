@@ -23,4 +23,6 @@ router.get("/updateTaskStatus/:id/:status", AuthVerifyMiddleware,TaskController.
 router.get("/listTaskByStatus/:status", AuthVerifyMiddleware,TaskController.listTaskByStatus);
 router.get("/taskStatusCount", AuthVerifyMiddleware,TaskController.taskStatusCount);
 
+
+
 module.exports = router;
