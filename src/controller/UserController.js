@@ -19,7 +19,7 @@ const jwt = require("jsonwebtoken");
 // Registration
 exports.registration=(req, res)=>{
     let reqBody=req.body
-    UsersModel.create(reqBody,(err,data)=>{
+    UserModel.create(reqBody,(err,data)=>{
         if(err){
             res.status(200).json({status:"fail",data:err})
         }
