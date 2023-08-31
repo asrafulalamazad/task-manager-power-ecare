@@ -1,21 +1,6 @@
 const UserModel = require("../models/UserModel")
 const jwt = require("jsonwebtoken");
 
-// // Create
-//error
-// exports.registration = (req, res)=>{
-//     let reqBody= req.body;
-//     UserModel.create(reqBody,(err,data)=>{
-//         if(err){
-//             res.status(200).json({status:"fail", data: err})
-//         }
-//         else {
-//             res.status(200).json({status:"success", data: data})
-//         }
-//     })
-
-// }
-
 // Registration
 exports.registration=(req, res)=>{
     let reqBody=req.body
@@ -28,7 +13,6 @@ exports.registration=(req, res)=>{
         }
     })
 }
-
 
 exports.login = (req, res)=>{
     let reqBody= req.body;
@@ -68,7 +52,7 @@ exports.profileUpdate = (req, res)=>{
 
 exports.profileDetails=(req,res)=>{
     let email= req.headers['email'];
-    UsersModel.aggregate([
+    UserModel.aggregate([
         {$match:{email:email}},
         {$project:{_id:1,email:1,firstName:1,lastName:1,mobile:1,photo:1,password:1}}
     ],(err,data)=>{
