@@ -64,3 +64,7 @@ exports.profileDetails=(req,res)=>{
         }
     })
 }
+exports.RecoverVerifyEmail=(req,res)=>{
+    //email
+
+}
