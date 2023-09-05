@@ -1,5 +1,4 @@
 const mongoose=  require("mongoose");
-
 const OTPSchema= mongoose.Schema({
         email: {type: String},
         otp:{type: String},
@@ -7,5 +6,5 @@ const OTPSchema= mongoose.Schema({
         createDate:{type: Date, default:Date.now}
     },{versionKey:false}
 )
-const OTPModel= mongoose.model("otps", DataSchema);
+const OTPModel= mongoose.model("otps", OTPSchema);
 module.exports = OTPModel;

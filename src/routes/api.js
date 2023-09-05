@@ -12,7 +12,9 @@ router.post("/login", UserController.login);
 router.post("/profileUpdate",AuthVerifyMiddleware , UserController.profileUpdate);
 router.get("/profileDetails",AuthVerifyMiddleware, UserController.profileDetails);
 
-router.get("/RecoverVerifyEmail", UserController.RecoverVerifyEmail);
+// router.get("/RecoverVerifyEmail/:email", UserController.RecoverVerifyEmail);
+router.get("/RecoverVerifyEmail/:email", UserController.RecoverVerifyEmail);
+router.get("/RecoverVerifyOTP/:email/:otp",UserController.RecoverVerifyOTP);
 
 
 
@@ -26,6 +28,7 @@ router.get("/updateTaskStatus/:id/:status", AuthVerifyMiddleware,TaskController.
 router.get("/listTaskByStatus/:status", AuthVerifyMiddleware,TaskController.listTaskByStatus);
 router.get("/taskStatusCount", AuthVerifyMiddleware,TaskController.taskStatusCount);
 router.get("/",TaskController.taskStatusCount);
+
 
 
 
