@@ -1,4 +1,4 @@
-var nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer');
 
 const SendEmailUtility= async (EmailTo, EmailText, EmailSubject) => {
 

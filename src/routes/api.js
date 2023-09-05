@@ -12,6 +12,7 @@ router.post("/login", UserController.login);
 router.post("/profileUpdate",AuthVerifyMiddleware , UserController.profileUpdate);
 router.get("/profileDetails",AuthVerifyMiddleware, UserController.profileDetails);
 
+router.get("/RecoverVerifyEmail", UserController.RecoverVerifyEmail);
 
 
 
