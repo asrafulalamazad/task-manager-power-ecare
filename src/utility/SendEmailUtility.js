@@ -10,9 +10,10 @@ const SendEmailUtility= async (EmailTo, EmailText, EmailSubject) => {
             pass: 'gszb lsan rcfn pcnu'
         },
     });
+    
 
     let mailOptions = {
-        from: 'Task Manager by ASRAFUL <asrafuldata4@gmail.com>',
+        from: 'Task Manager by ASRAFUL <asrafulnodemailer@gmail.com>',
         to: EmailTo,
         subject: EmailSubject,
         text: EmailText
