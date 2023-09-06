@@ -79,7 +79,7 @@ exports.RecoverVerifyEmail=async (req,res)=>{
             // OTP Insert
             let CreateOTP = await OTPModel.create({email: email, otp: OTPCode})
             // Email Send
-            let SendEmail = await SendEmailUtility(email,"Your PIN Code is= "+OTPCode,"Task Manager PIN Verification")
+            let SendEmail = await SendEmailUtility(email,"Your OTP  is= "+OTPCode,"Task Manager OTP Verification")
             res.status(200).json({status: "success", data: SendEmail})
         }else {
             res.status(200).json({status: "fail", data: "No User Found"})
