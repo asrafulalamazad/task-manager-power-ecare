@@ -122,3 +122,31 @@ exports.RecoverVerifyOTP = async (req,res)=>{
 
 
 }
+
+
+exports.RecoverResetPass = async (req,res)=>{
+    let email = req.body['email'];
+    let OTPCode = req.body['OTP'];
+    let NewPass = req.body['password'];
+    let statusUpdate=1;
+
+    try{
+        let OTPUsedCount = await OTPModel.aggregate([{$match: {email: email, otp: OTPCode, status: statusUpdate}}, {$count: "total"}]);
+        if(OTPUsedCount.length>0){
+            let PassUpdate = await UserModel.updateOne({email: email}, {
+                password: NewPass
+            })
+            res.status(200).json({status: "success", data: PassUpdate})
+            }else {
+            res.status(200).json({status: "fail", data: "Invalid Request"})
+        }
+
+
+    }catch (e) {
+        res.status(200).json({status: "fail", data:e})
+
+    }
+
+
+
+}

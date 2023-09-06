@@ -15,6 +15,7 @@ router.get("/profileDetails",AuthVerifyMiddleware, UserController.profileDetails
 // router.get("/RecoverVerifyEmail/:email", UserController.RecoverVerifyEmail);
 router.get("/RecoverVerifyEmail/:email", UserController.RecoverVerifyEmail);
 router.get("/RecoverVerifyOTP/:email/:otp",UserController.RecoverVerifyOTP);
+router.post("/RecoverResetPass/",UserController.RecoverResetPass);
 
 
 
